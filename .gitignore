@@ -1,4 +1,4 @@
-# Visual Studio 2015 user specific files
+# Visual Studio 2015+ user specific files
 .vs/
 
 # Compiled Object files
@@ -73,3 +73,28 @@ Plugins/**/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+
+# Unreal Editor auto backups
+Backup/
+Saved/Backup/
+
+# Unreal Engine upgrade logs
+UpgradeLog*.txt
+UpgradeLog*.htm
+Saved/Logs/UpgradeLog*.*
+
+# Crash reports and logs
+Saved/Crashes/
+Saved/Logs/
+
+# Temporary or local user files
+*.log
+*.tmp
+*.bak
+*.old
+*.orig
+
+# OS-specific junk
+.DS_Store
+Thumbs.db
+desktop.ini
