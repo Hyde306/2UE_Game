@@ -87,7 +87,7 @@ void AThirdPersonCharacter::LookUp(float Value)
 void AThirdPersonCharacter::StartJump()
 {
     Jump(); // Unreal のジャンプ処理
-    JumpStartTrigger = true;
+    bJumpRequested = true;
 }
 
 void AThirdPersonCharacter::StopJump()
@@ -112,11 +112,6 @@ void AThirdPersonCharacter::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
 
-    if (UMyAnimInstance* Anim = Cast<UMyAnimInstance>(GetMesh()->GetAnimInstance()))
-    {
-        Anim->bIsRunning = bIsRunning;
-        Anim->JumpStartTrigger = JumpStartTrigger;
-    }
-
-    JumpStartTrigger = false; // ← 1フレームだけ true にするため
+    JumpStartTrigger = bJumpRequested; // ← ここで渡す
+    bJumpRequested = false;
 }

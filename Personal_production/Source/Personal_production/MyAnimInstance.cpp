@@ -9,9 +9,12 @@ void UMyAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 
     if (APawn* Pawn = TryGetPawnOwner())
     {
-        if (ACharacter* Character = Cast<ACharacter>(Pawn))
+        if (AThirdPersonCharacter* Character = Cast<AThirdPersonCharacter>(Pawn))
         {
+            Speed = Character->GetVelocity().Size();
             IsInAir = Character->GetCharacterMovement()->IsFalling();
+            JumpStartTrigger = Character->JumpStartTrigger;
+            bIsRunning = Character->IsRunning();
         }
     }
 }

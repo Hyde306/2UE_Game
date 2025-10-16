@@ -14,6 +14,7 @@ public:
 
 	UPROPERTY(BlueprintReadWrite, Category = "Jump", meta = (AllowPrivateAccess = "true"))
 	bool JumpStartTrigger = false;
+	bool IsRunning() const { return bIsRunning; }
 
 protected:
 	virtual void BeginPlay() override;
@@ -45,6 +46,6 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category = "Movement")
 	float RunSpeed = 600.f;
 
-
+	bool bJumpRequested = false;
 
 };
