@@ -28,11 +28,16 @@ AThirdPersonCharacter::AThirdPersonCharacter()
     SpringArm->bUsePawnControlRotation = true;
 
     Camera->bUsePawnControlRotation = false;
+
+    WalkSpeed = 300.0f;
+    RunSpeed = 600.0f;
 }
 
 void AThirdPersonCharacter::BeginPlay()
 {
     Super::BeginPlay();
+
+    GetCharacterMovement()->MaxWalkSpeed = WalkSpeed;
 }
 
 void AThirdPersonCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
